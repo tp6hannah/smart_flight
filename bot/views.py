@@ -69,7 +69,7 @@ class bot(generic.View):
 
 
 def post_facebook_message(sender_id, text, url, title):
-    post_message_url = 'https://graph.facebook.com/v2.6/me/messages?access_token=EAAD6HcWbZAcEBAB1XGWqOZCh4N2LHdbl9G9yNDiOXjEqhIXtYzZAg8FyqxkUVtRnZBDiiWjxvUM1nlWjF6EwQuxUbhQN1XwSm26n11F9KQKNHZBTZCoAkqfnw4g3YFXMXM8ZCKpYZCKra5VExv5KO0zMhgshhfajMZBdNzeZBZBMZBeReAZDZD'
+    post_message_url = 'https://graph.facebook.com/v2.6/me/messages?access_token=EAABo9jWFW8MBAGflGwmX9xI0kaLGsW8edHfaZCgLbgZBIibL8pqB3UOKtoRZCg7r5jZCSXtMxSHZBW0rlzHOEk6UZAhPUG4ZBoZA5YmVm5fYKNPbOZC9tL1V8QyL48eaElPakp1Y1KqrCeovITXpE3ZCbwmefxjtGWAWhR1UwG3pwlrzZBZAeb8yDZCY7'
     response_msg = json.dumps({
         "recipient": {
             "id": sender_id
