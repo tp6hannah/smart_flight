@@ -57,14 +57,21 @@ class bot(generic.View):
                 sender_id = message['sender']['id']
                 recipient_id = message['recipient']['id']
 
+
+                if message.get('message'):
+                    text = message['message']['text']
+                    data = Main.get_flight(text)
+                    post_facebook_message(sender_id, data, 'https://www.skyscanner.com.tw/', '訂票') 
+                    pixnet_url = Pixnet.get_url('BOS')
+
+'''
                 try:
                     if message.get('message'):
                         text = message['message']['text']
                         try:
                             data = Main.get_flight(text)
                             post_facebook_message(sender_id, data, 'https://www.skyscanner.com.tw/', '訂票') 
-                            #pixnet_url = Pixnet.get_url('BOS')
-                            '''
+                            pixnet_url = Pixnet.get_url('BOS')
                         except:
                             post_facebook_message(sender_id, err, 'https://www.facebook.com/smart.flight.tw/', 'Smart Flight')
                 except:
