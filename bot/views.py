@@ -32,7 +32,7 @@ class Main:
         return data 
 
 
-main = Main 
+#main = Main 
 # Create your views here.
 
 class bot(generic.View):
@@ -60,7 +60,7 @@ class bot(generic.View):
                     if message.get('message'):
                         text = message['message']['text']
                         try:
-                            data = main.get_flight(text)
+                            data = Main.get_flight(text)
                             post_facebook_message(sender_id, data, 'https://www.skyscanner.com.tw/', '訂票') 
                         except:
                             post_facebook_message(sender_id, '查無結果', 'https://www.facebook.com/smart.flight.tw/', 'Smart Flight')
