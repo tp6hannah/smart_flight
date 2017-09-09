@@ -19,7 +19,10 @@ class Main:
         luis_get_city = Luis.get_city(text)
         city_from = luis_get_city[0]
         city_to = luis_get_city[1]
-        date = luis_get_city[2]
+        try:
+            date = luis_get_city[2]
+        except:
+            date = time.strftime("%Y-%m-%d", time.localtime())
         date_format = Date.date_format(date)
         get_city_index = City.get_city_index(city_from, city_to)
         city_from_index = get_city_index[0]
