@@ -61,7 +61,7 @@ class bot(generic.View):
                     text = message['message']['text']
                     data = Main.get_flight(text)
                     post_facebook_message(sender_id, data, 'https://www.skyscanner.com.tw/', '訂票') 
-                    pixnet_url = Pixnet.get_url('BOS')
+                    pixnet_url = Pixnet.get_city_url('BOS')
         return HttpResponse()            
 
 '''
