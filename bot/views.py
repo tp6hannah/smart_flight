@@ -64,7 +64,7 @@ class bot(generic.View):
                             data = Main.get_flight(text)
                             post_facebook_message(sender_id, data, 'https://www.skyscanner.com.tw/', '訂票') 
                             pixnet_url = Pixnet.get_url('BOS')
-                        except Exception as err:
+                        except:
                             post_facebook_message(sender_id, err, 'https://www.facebook.com/smart.flight.tw/', 'Smart Flight')
                 except:
                     post_facebook_message(sender_id, '謝謝！', 'https://www.facebook.com/smart.flight.tw/', 'Smart Flight')
