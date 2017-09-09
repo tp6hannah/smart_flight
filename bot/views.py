@@ -31,7 +31,7 @@ class Main:
         data = '' 
         for row in flight[0][1:]:
             data = data + row
-        return data 
+        return data, city_url  
 
 
 #main = Main 
@@ -63,9 +63,10 @@ class bot(generic.View):
                         text = message['message']['text']
                         try:
                             data = Main.get_flight(text)
-                            post_facebook_message(sender_id, data, 'https://www.skyscanner.com.tw/', '訂票') 
-                            city_url = City.get_city_url(city_to_index )
-                            post_facebook_message(sender_id, data, city_url, '痞客邦') 
+                            ticket = data[0]
+                            city_url = data[1]
+                            post_facebook_message(sender_id, ticket, 'https://www.skyscanner.com.tw/', '訂票') 
+                            post_facebook_message(sender_id, '', city_url, '痞客邦') 
                         except:
                             post_facebook_message(sender_id, '查無結果', 'https://www.facebook.com/smart.flight.tw/', 'Smart Flight')
                 except:
