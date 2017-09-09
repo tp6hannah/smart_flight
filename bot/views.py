@@ -64,7 +64,7 @@ class bot(generic.View):
                             data = Main.get_flight(text)
                             post_facebook_message(sender_id, data, 'https://www.skyscanner.com.tw/', '訂票') 
                         except:
-                            post_facebook_message(sender_id, err, 'https://www.facebook.com/smart.flight.tw/', 'Smart Flight')
+                            post_facebook_message(sender_id, '查無結果', 'https://www.facebook.com/smart.flight.tw/', 'Smart Flight')
                 except:
                     post_facebook_message(sender_id, '謝謝！', 'https://www.facebook.com/smart.flight.tw/', 'Smart Flight')
         return HttpResponse()
