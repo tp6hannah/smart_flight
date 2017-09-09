@@ -65,8 +65,8 @@ class bot(generic.View):
                             data = Main.get_flight(text)
                             ticket = data[0]
                             city_url = data[1]
-                            post_facebook_message(sender_id, ticket, 'https://www.skyscanner.com.tw/', '訂票') 
-                            post_facebook_message(sender_id, '', city_url, '痞客邦') 
+                            #post_facebook_message(sender_id, ticket, 'https://www.skyscanner.com.tw/', '訂票') 
+                            post_facebook_message(sender_id, ticket, city_url, '痞客邦') 
                         except:
                             post_facebook_message(sender_id, '查無結果', 'https://www.facebook.com/smart.flight.tw/', 'Smart Flight')
                 except:
