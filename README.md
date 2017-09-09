@@ -1,6 +1,8 @@
-# Python: Getting Started
+https://www.facebook.com/math.helper.tw/
 
-A barebones Django app, which can easily be deployed to Heroku.
+# python-getting-started
+
+A barebones Python app, which can easily be deployed to Heroku.
 
 This application supports the [Getting Started with Python on Heroku](https://devcenter.heroku.com/articles/getting-started-with-python) article - check it out.
 
@@ -12,7 +14,7 @@ Make sure you have Python [installed properly](http://install.python-guide.org).
 $ git clone git@github.com:heroku/python-getting-started.git
 $ cd python-getting-started
 
-$ pipenv install
+$ pip install -r requirements.txt
 
 $ createdb python_getting_started
 
