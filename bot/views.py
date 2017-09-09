@@ -25,7 +25,7 @@ class Main:
         city_from_index = get_city_index[0]
         city_to_index = get_city_index[1]
         flight = Qpx.get_flight(city_from_index, city_to_index, date_format)
-        #pixnet_url = Pixnet.get_url('BOS')
+        pixnet_url = Pixnet.get_url('city_to_index')
         
         data = '' 
         for row in flight[0][1:]:
@@ -57,27 +57,17 @@ class bot(generic.View):
                 sender_id = message['sender']['id']
                 recipient_id = message['recipient']['id']
 
-                if message.get('message'):
-                    text = message['message']['text']
-                    data = Main.get_flight(text)
-                    post_facebook_message(sender_id, data, 'https://www.skyscanner.com.tw/', '訂票') 
-                    pixnet_url = Pixnet.get_city_url('BOS')
-        return HttpResponse()            
-
-'''
                 try:
                     if message.get('message'):
                         text = message['message']['text']
                         try:
                             data = Main.get_flight(text)
                             post_facebook_message(sender_id, data, 'https://www.skyscanner.com.tw/', '訂票') 
-                            pixnet_url = Pixnet.get_url('BOS')
                         except:
                             post_facebook_message(sender_id, err, 'https://www.facebook.com/smart.flight.tw/', 'Smart Flight')
                 except:
                     post_facebook_message(sender_id, '謝謝！', 'https://www.facebook.com/smart.flight.tw/', 'Smart Flight')
         return HttpResponse()
-'''
 
 def post_facebook_message(sender_id, text, url, title):
     post_message_url = 'https://graph.facebook.com/v2.6/me/messages?access_token=EAABo9jWFW8MBAGflGwmX9xI0kaLGsW8edHfaZCgLbgZBIibL8pqB3UOKtoRZCg7r5jZCSXtMxSHZBW0rlzHOEk6UZAhPUG4ZBoZA5YmVm5fYKNPbOZC9tL1V8QyL48eaElPakp1Y1KqrCeovITXpE3ZCbwmefxjtGWAWhR1UwG3pwlrzZBZAeb8yDZCY7'
