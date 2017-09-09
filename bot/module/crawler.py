@@ -1,8 +1,4 @@
-#import pandas as pd
-#import numpy as np 
-#import requests as r
 import csv
-#from bs4 import BeautifulSoup as bs
 
 class City:
     def get_city_index(city_from, city_to):
