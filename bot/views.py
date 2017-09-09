@@ -11,6 +11,7 @@ from .module.date import Date as Date
 from .module.qpx import Qpx as Qpx
 from .module.crawler import City as City
 from .module.luis import Luis as Luis
+from .module.pixnet import Pixnet as Pixnet 
 #from .module.link import Link as Link
 #from sympy.abc import u, t, x, y, z
 class Main:
@@ -24,13 +25,14 @@ class Main:
         city_from_index = get_city_index[0]
         city_to_index = get_city_index[1]
         flight = Qpx.get_flight(city_from_index, city_to_index, date_format)
+        pixnet_url = Pixnet.get_url(city_to_index)
         data = '' 
         for row in flight[0][1:]:
             data = data + row
         return data 
 
 
-main = Main 
+#main = Main 
 # Create your views here.
 
 class bot(generic.View):
@@ -58,7 +60,7 @@ class bot(generic.View):
                     if message.get('message'):
                         text = message['message']['text']
                         try:
-                            data = main.get_flight(text)
+                            data = Main.get_flight(text)
                             post_facebook_message(sender_id, data, 'https://www.skyscanner.com.tw/', '訂票') 
                         except:
                             post_facebook_message(sender_id, '查無結果', 'https://www.facebook.com/smart.flight.tw/', 'Smart Flight')
