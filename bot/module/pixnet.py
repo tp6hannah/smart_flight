@@ -7,3 +7,5 @@ class Pixnet:
             for row in reader:
                 if row['city'] == city_to_index:
                     return row['url']
+                
+
