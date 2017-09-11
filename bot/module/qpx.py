@@ -57,10 +57,10 @@ class Qpx:
             ticket[i].append('\n航空公司：' + carrier)
             ticket[i].append('\n出發時間：' + time_departure)
             ticket[i].append('\n到達時間：' + time_arrival)
-            ticket[i].append('\n飛行時間：%s minutes' % (str(duration)))
+            ticket[i].append('\n飛行時間：%s 分' % (str(duration)))
             #ticket[i].append('\n出發航廈：' + str(terminal_orginal))
             #ticket[i].append('\n到達航廈：' + str(terminal_destination))
-            ticket[i].append('\n里程數：%s km' % (str(mileage)))
+            ticket[i].append('\n里程數：%s 里' % (str(mileage)))
             ticket[i].append('\n票價：' + sale_total)
  
         #print(ticket)    
