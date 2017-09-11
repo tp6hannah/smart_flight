@@ -55,9 +55,9 @@ class Qpx:
             ticket[i].append('\n到達城市：' + city_to)
             ticket[i].append('\n班機資訊：' + aircraft)
             ticket[i].append('\n航空公司：' + carrier)
-            ticket[i].append('\n飛行時間：' + str(duration))
-            ticket[i].append('\n到達時間：' + time_arrival)
             ticket[i].append('\n出發時間：' + time_departure)
+            ticket[i].append('\n到達時間：' + time_arrival)
+            ticket[i].append('\n飛行時間：' + str(duration))
             #ticket[i].append('\n出發航廈：' + str(terminal_orginal))
             #ticket[i].append('\n到達航廈：' + str(terminal_destination))
             ticket[i].append('\n里程數：' + str(mileage))
@@ -66,28 +66,3 @@ class Qpx:
         #print(ticket)    
         return ticket
             
-
-        '''
-        duration = data['trips']['tripOption'][0]['slice'][0]['duration']
-        time_arrival = data['trips']['tripOption'][0]['slice'][0]['segment'][0]['leg'][0]['arrivalTime']
-        time_departure = data['trips']['tripOption'][0]['slice'][0]['segment'][0]['leg'][0]['departureTime']
-        terminal_orginal = data['trips']['tripOption'][0]['slice'][0]['segment'][0]['leg'][0]['originTerminal']
-        terminal_destination = data['trips']['tripOption'][0]['slice'][0]['segment'][0]['leg'][0]['destinationTerminal']
-        mileage = data['trips']['tripOption'][0]['slice'][0]['segment'][0]['leg'][0]['mileage']
-        sale_total = data['trips']['tripOption'][0]['saleTotal']
-        ticket.append('\n到達機場：' + airport_to)
-        ticket.append('\n出發機場：' + airport_from)
-        ticket.append('\n到達城市：' + city_to)
-        ticket.append('\n出發城市：' + city_from)
-        ticket.append('\n班機資訊：' + aircraft)
-        ticket.append('\n航空公司：' + carrier)
-        ticket.append('\n飛行時間：' + str(duration))
-        ticket.append('\n到達時間：' + time_arrival)
-        ticket.append('\n出發時間：' + time_departure)
-        ticket.append('\n出發航廈：' + str(terminal_orginal))
-        ticket.append('\n到達航廈：' + str(terminal_destination))
-        ticket.append('\n里程數：' + str(mileage))
-        ticket.append('\n票價：' + sale_total1 +', '+ sale_total2+ ', '+ sale_total3)
-        print(ticket)
-        return ticket 
-        '''
