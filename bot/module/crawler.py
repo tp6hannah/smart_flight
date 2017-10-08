@@ -2,7 +2,7 @@ import csv
 
 class City:
     def get_city_index(city_from, city_to):
-        with open('city.csv', 'r') as csvfile:
+        with open('city.csv', 'r',encodinh = 'utf8') as csvfile:
             reader = csv.DictReader(csvfile)
             city_from_index = ''
             city_to_index = ''
