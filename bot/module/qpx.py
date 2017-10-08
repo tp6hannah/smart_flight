@@ -66,7 +66,7 @@ class Qpx:
         #print(ticket)    
         return ticket
             
-city_from = input()
-city_to = input()
-date = '2017-12-12'
-print(Qpx.get_flight_max(city_from, city_to, date, 5))
+#city_from = input()
+#city_to = input()
+#date = '2017-12-12'
+#print(Qpx.get_flight_max(city_from, city_to, date, 5))
